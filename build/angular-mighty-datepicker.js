@@ -88,9 +88,9 @@
           _isInRange = function(day) {
             if ($scope.options.rangeMode) {
               if ($scope.options.rangeMode === "from") {
-                return moment.range($scope.model, $scope.before).contains(day) || day.isSame($scope.before, 'day');
+                return moment.range($scope.model, $scope.before).contains(day) ;//|| day.isSame($scope.before, 'day');
               } else {
-                return moment.range($scope.after, $scope.model).contains(day) || day.isSame($scope.after, 'day');
+                return moment.range($scope.after, $scope.model).contains(day) ;//|| day.isSame($scope.after, 'day');
               }
             } else {
               return false;
@@ -237,7 +237,7 @@
             case "simple":
               $scope.$watch('model', function(newVal, oldVal) {
                 if (!moment.isMoment(newVal)) {
-                  newVal = moment(newVal);
+                  return;
                 }
                 if (!oldVal || oldVal && !newVal.isSame(oldVal, 'day')) {
                   $scope.model = newVal;
@@ -274,3 +274,4 @@
   ]);
 
 }).call(this);
+
