@@ -1,4 +1,4 @@
-define(['moment'], function(moment) {
+define(['moment', 'angular', 'moment-range'], function(moment, angular) {
   angular.module("mightyDatepicker", []).directive("mightyDatepicker", [
     "$compile", function($compile) {
       var options, pickerTemplate;
